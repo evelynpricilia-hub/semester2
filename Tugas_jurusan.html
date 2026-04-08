@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Penggunaan Objek Select</title>
+    <link rel="stylesheet" href="Tugas_jurusan.css">
+</head>
+<body>
+
+    <h2>Penggunaan Objek Select</h2>
+
+    <div class="box"> <!-- Tambahkan class "box" untuk mengatur tampilan kotak -->
+        <p><b>Masukan :</b></p>
+
+        <label>Jurusan Di UNIKOM :</label>
+        <select id="jurusan">
+            <option value="">-- Pilih Jurusan --</option>
+            <option>Teknik Informatika</option>
+            <option>Manajemen Informatika</option>
+            <option>Teknik Komputer</option>
+            <option>Teknik Industri</option>
+            <option>Teknik Elektro</option>
+            <option>Teknik Sipil</option>
+            <option>Teknik Arsitektur</option>
+            <option>Perencanaan Wilayah Kota</option>
+        </select>
+
+        <button onclick="kirimData()">Kirim</button>
+        <button onclick="resetData()">Ulang</button>
+
+        <p><b>Output Jurusan :</b></p>
+        <input type="text" id="output" readonly> <!-- Input untuk menampilkan hasil --> <!-- Tambahkan atribut readonly agar tidak bisa diubah oleh pengguna -->
+
+    <script src="Tugas_jurusan.js"></script>
+</body>
+</html>
