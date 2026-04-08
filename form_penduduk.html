@@ -1,0 +1,167 @@
+<!DOCTYPE html> <!-- Menentukan bahwa ini adalah dokumen HTML5 -->
+
+<html lang="id"> <!-- Awal dokumen HTML dan bahasa yang digunakan adalah Bahasa Indonesia -->
+
+<head> <!-- Bagian kepala dokumen (tidak tampil di halaman) -->
+    
+    <meta charset="UTF-8"> <!-- Mengatur encoding karakter agar bisa membaca huruf dengan benar -->
+    <title>Form Identitas Warga</title> <!-- Judul halaman yang tampil di tab browser -->
+    <link rel="stylesheet" href="penduduk.css">  <!-- Menghubungkan file CSS eksternal untuk mengatur tampilan -->
+   
+
+</head> <!-- Akhir bagian head -->
+
+<body> <!-- Bagian isi halaman yang tampil di browser -->
+
+<header> <!-- Bagian header / bagian atas halaman -->
+
+    <h1>Bandung</h1> <!-- Judul utama halaman -->
+
+    <p>
+        Kota metropolitan terbesar di Provinsi Jawa Barat, sekaligus menjadi ibu kota provinsi tersebut.
+    </p> <!-- Paragraf deskripsi -->
+
+    <nav> <!-- Bagian navigasi menu -->
+        <ul> <!-- Daftar menu -->
+            <li><a href="index.html#sejarah">Sejarah</a></li> <!-- Link ke bagian sejarah -->
+            <li><a href="index.html#geografis">Geografis</a></li> <!-- Link ke bagian geografis -->
+            <li><a href="index.html#wisata">Wisata</a></li> <!-- Link ke bagian wisata -->
+            <li><a href="penduduk.html">Perpindahan Warga</a></li> <!-- Link ke halaman ini -->
+            <li><a href="kalkulator.html">Kalkulator</a></li>
+        </ul>
+    </nav>
+
+</header> <!-- Akhir header -->
+<!-- Article untuk membungkus bagian form -->
+ <!--form di gunakan untuk menyimpan inputan dari user-->
+
+<article id="perpindahan_warga"> <!-- id digunakan untuk penanda atau pemanggilan di CSS/JS -->
+
+<form id="formWarga"> <!-- Awal form, id digunakan untuk dipanggil di JavaScript -->
+
+<fieldset> <!-- Mengelompokkan bagian form --> 
+
+<legend>Form Identitas Warga</legend> <!-- Judul dalam fieldset -->
+
+<!-- INPUT NAMA DEPAN -->
+<div> <!-- Pembungkus input -->
+<label>Nama Depan :</label><br> <!-- Label keterangan -->
+<!-- Input dengan type teks di gunakan untuk data jenis inputan text-->
+<input type="text" id="nama_depan"> <!-- Input teks untuk nama depan -->
+</div>
+
+<!-- INPUT NAMA BELAKANG -->
+<div>
+<label>Nama Belakang :</label><br> 
+<input type="text" id="nama_belakang">
+</div>
+
+<!-- INPUT ALAMAT -->
+<div>
+<label>Alamat Saat Ini :</label><br>
+<textarea id="alamat" rows="4" cols="33"></textarea> <!--rows="4" menentukan jumlah baris yang ditampilkan -->
+<!-- Textarea untuk inputan dengan beberapa  baris teks panjang -->
+</div>
+
+<!-- INPUT TEMPAT LAHIR -->
+<div>
+<label>Tempat Lahir :</label><br>
+<input type="text" id="tempat_lahir">
+</div>
+
+<!-- INPUT TANGGAL LAHIR -->
+<div>
+<label>Tanggal Lahir :</label><br>
+<!-- Input type date untuk menampilkan tanggal, bulan, dan tahun inputan data khusus tanggal / kalender -->
+<input type="date" id="tgl_lahir"> 
+</div> 
+
+<!-- INPUT AGAMA -->
+<div>
+<label>Agama :</label><br>
+<select id="agama"> <!-- Dropdown pilihan --> <!--digunakan untuk mengganti nilai pada inputan -->
+<option value="">-- Pilih Agama --</option> <!-- Opsi default -->
+<option>Islam</option> 
+<option>Kristen</option>
+<option>Hindu</option>
+<option>Budha</option>
+<option>Katolik</option>
+<option>Khonghucu</option>
+</select>
+</div>
+
+<!-- INPUT JENIS KELAMIN -->
+<div>
+<label>Jenis Kelamin :</label><br>
+<!--inputan dengan type radio memiliki nilai value laki laki-->
+<input type="radio" name="jk" value="Laki-Laki"> Laki-Laki 
+<!--inputan dengan type radio memiliki nilai value perempuan-->
+<input type="radio" name="jk" value="Perempuan"> Perempuan 
+<!-- Radio button perempuan -->
+</div>
+
+<!-- INPUT BAHASA ASING -->
+<div>
+<label>Bahasa Asing :</label><br>
+<!-- Input type checkbox untuk pilihan berbentuk kotak yang bisa dipilih lebih dari satu -->
+<input type="checkbox" name="bahasa" value="Inggris"> Inggris 
+<!-- Checkbox Inggris -->
+<input type="checkbox" name="bahasa" value="Arab"> Arab 
+<!-- Checkbox Arab -->
+<input type="checkbox" name="bahasa" value="Jerman"> Jerman 
+<!-- Checkbox Jerman -->
+</div>
+
+<!-- INPUT NIK -->
+<div>
+<label>NIK :</label><br>
+<input type="tel" id="nik" pattern="[0-9]{16}" title="NIK harus terdiri dari 16 digit angka"> 
+</div>
+
+<!-- INPUT TELEPON -->
+<div>
+<label>No. Telepon :</label><br>
+<!-- Input type tel khusus untuk nomor telepon -->
+<input type="tel" id="telepon" placeholder="08******" pattern="08[0-9]{8,10}"> <!-- Placeholder dan pattern untuk validasi nomor telepon -->
+<!-- type="tel" khusus untuk nomor telepon -->
+</div>
+
+<!-- INPUT EMAIL -->
+<div>
+<label>Email :</label><br>
+<!-- Input type email khusus untuk alamat email -->
+<input type="email" id="email"> 
+<!-- type="email" otomatis validasi format email -->
+</div>
+
+<!-- INPUT STATUS PERNIKAHAN -->
+<div>
+<label>Status Pernikahan :</label><br>
+<select id="status">
+<option value="">-- Pilih Status --</option>
+<option>Menikah</option>
+<option>Belum Menikah</option>
+</select>
+</div>
+
+<br>
+
+<!-- TOMBOL SUBMIT -->
+<button type="submit" value="submit">Submit</button> 
+<!-- Mengirim data form -->
+
+<!-- TOMBOL RESET --> <!--tombol dalam bentuk button -->
+<button type="reset">Reset</button> 
+<!-- Menghapus semua input dan mengembalikan ke awal -->
+
+</fieldset> <!-- Akhir fieldset -->
+</form> <!-- Akhir form -->
+
+<!-- Tempat untuk menampilkan hasil inputan -->
+<div id="hasil"></div> 
+<!-- Nantinya diisi oleh JavaScript -->
+
+</article> <!-- Akhir article -->
+<script src="perpindahan_warga.js"></script>
+</body> <!-- Akhir body -->
+</html> <!-- Akhir dokumen HTML -->
