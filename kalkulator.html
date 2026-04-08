@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="kalkulator.css" />
+</head>
+<body>
+
+<header>
+    <h1>Bandung</h1>
+    <p>
+        Kota metropolitan terbesar di Provinsi Jawa Barat, sekaligus menjadi ibu kota provinsi tersebut.
+    </p>
+    <nav>
+        <ul>
+            <li><a href="index.html#sejarah">Sejarah</a></li>
+            <li><a href="index.html#geografis">Geografis</a></li>
+            <li><a href="index.html#wisata">Wisata</a></li>
+            <li><a href="penduduk.html">Perpindahan Warga</a></li>
+            <li><a href="kalkulator.html">Kalkulator</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="kalkulator-main">
+<div class="card">
+    <h2>Kalkulator</h2>
+
+    <form onsubmit="hitung(); return false;">
+
+        Angka 1:
+        <input type="number" id="angka1" required>
+
+        Angka 2:
+        <input type="number" id="angka2" required>
+
+        <div class="radio-group">
+            <input type="radio" name="operasi" value="tambah" required> Tambah <br>
+            <input type="radio" name="operasi" value="kurang"> Kurang <br>
+            <input type="radio" name="operasi" value="kali"> Kali <br>
+            <input type="radio" name="operasi" value="bagi"> Bagi
+        </div>
+
+        <button type="submit">Hitung</button>
+
+    </form>
+
+    <h3>Hasil: <span id="hasil"></span></h3>
+</div>
+</main>
+
+<script>
+function hitung() {
+    let a = parseFloat(document.getElementById("angka1").value);
+    let b = parseFloat(document.getElementById("angka2").value);
+    let operasi = document.querySelector('input[name="operasi"]:checked').value;
+    let hasil;
+
+    if (operasi === "tambah") {
+        hasil = a + b;
+    } else if (operasi === "kurang") {
+        hasil = a - b;
+    } else if (operasi === "kali") {
+        hasil = a * b;
+    } else if (operasi === "bagi") {
+        hasil = a / b;
+    }
+
+    document.getElementById("hasil").innerText = hasil;
+}
+</script>
+
+<footer>
+  <p>Belajar Dasar Pemrograman Web &#169; 2019, Dicoding Academy</p>
+</footer>
+
+</body>
+</html>
