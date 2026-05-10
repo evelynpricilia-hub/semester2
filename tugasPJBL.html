@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Pendaftaran Lomba</title>
+
+<link rel="stylesheet" href="tugas_Pjbl.css">
+</head>
+
+<body>
+
+<!-- NAVIGASI -->
+<nav>
+    <a href="#" onclick="showPage('home')">🏠 Home</a>
+    <a href="#" onclick="showPage('form')">📝 Daftar</a>
+    <a href="#" onclick="showPage('info')">📢 Info</a>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="active">
+    <h1>🎉 Pendaftaran Lomba Sekolah</h1>
+    <p>Ikuti lomba seru dan tunjukkan bakatmu!</p>
+</section>
+
+<!-- FORM -->
+<section id="form">
+    <div class="card">
+        <h2>Form Pendaftaran</h2>
+        <form onsubmit="tampilkanData(event)">
+            <input type="text" id="nama" placeholder="Nama Lengkap" required>
+            <input type="text" id="kelas" placeholder="Kelas" required>
+
+            <select id="lomba">
+                <option>Menyanyi</option>
+                <option>Pidato</option>
+                <option>Desain Poster</option>
+            </select>
+
+            <input type="text" id="hp" placeholder="No HP" required>
+
+            <button type="submit">Daftar 🚀</button>
+        </form>
+
+        <div id="hasil"></div>
+    </div>
+</section>
+
+<!-- INFO -->
+<section id="info">
+    <h2>📢 Info Lomba</h2>
+    <p>✨ Terbuka untuk semua siswa</p>
+    <p>✨ Pilih 1 lomba saja</p>
+    <p>✨ Penutupan: 30 Mei</p>
+</section>
+
+<script src="tugas_Pjbl.js"></script>
+
+</body>
+</html>
